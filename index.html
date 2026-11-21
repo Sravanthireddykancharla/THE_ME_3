@@ -1,51 +1,227 @@
-1. Brand Name & Navbar
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiranya Real Estates | Where Golden Dreams Meet Forever Homes</title>
+  <link href="https://googleapis.com" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B192C;
+      --navy-card: #132540;
+      --gold: #D4AF37;
+      --gold-dark: #B59021;
+      --ivory: #FAF8F5;
+      --text: #1E293B;
+      --muted: #64748B;
+      --white: #FFFFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--ivory); color: var(--text); line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
-• Brand Name: HIRANYA REAL ESTATES
-• Navbar Button: Download Brochure
+    /* Navbar */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 7%; background: rgba(11, 25, 44, 0.94); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .logo { color: var(--gold); font-size: 1.35rem; font-weight: 700; letter-spacing: 1px; }
+    .nav-links a { color: var(--white); text-decoration: none; margin: 0 14px; font-size: 0.92rem; }
+    .nav-links a:hover { color: var(--gold); }
 
-2. Hero Section (Punchy Start + Home Page Form)
+    .btn-gold {
+      background: var(--gold); color: var(--navy); border: none;
+      padding: 12px 22px; font-size: 0.92rem; font-weight: 700;
+      border-radius: 6px; cursor: pointer; transition: 0.3s;
+    }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); }
 
-• Main Headline: Where Golden Dreams Meet Forever Homes.
-• Sub-Headline: Premium RERA-approved 2 & 3 BHK residences and gated plots by Hiranya Real Estates — crafted for 2X value growth and peaceful family living.
-• Hero Video Caption: Experience 360° Luxury Living — Virtual Walkthrough
-• Home Page Form Title: Get Instant Call Back & Floor Plans
-• Form Fields: Full Name | Phone Number | Email Address
-• Form Submit Button: Unlock Exclusive Launch Offer
+    /* 1. HERO + LOOP VIDEO + HOME PAGE DIRECT FORM */
+    .hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center;
+      padding: 110px 7% 60px; color: var(--white); overflow: hidden;
+    }
+    .hero video {
+      position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
+      transform: translate(-50%, -50%); object-fit: cover; z-index: -2;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(120deg, rgba(11,25,44,0.88) 0%, rgba(11,25,44,0.72) 100%);
+      z-index: -1;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.2fr 0.85fr; gap: 40px;
+      align-items: center; width: 100%; max-width: 1200px; margin: 0 auto;
+    }
+    .badge {
+      display: inline-block; padding: 6px 14px; border: 1px solid var(--gold);
+      color: var(--gold); border-radius: 50px; font-size: 0.8rem; margin-bottom: 16px;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .hero h1 { font-size: 3.1rem; line-height: 1.18; margin-bottom: 16px; }
+    .hero p { font-size: 1.08rem; color: #E2E8F0; margin-bottom: 26px; }
 
-3. Social Proof
+    /* Direct Home Page Lead Form Card */
+    .hero-form-card {
+      background: var(--white); color: var(--text); padding: 30px;
+      border-radius: 12px; border-top: 5px solid var(--gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    }
+    .hero-form-card h3 { color: var(--navy); font-size: 1.5rem; margin-bottom: 6px; }
+    .hero-form-card p { color: var(--muted); font-size: 0.88rem; margin-bottom: 16px; }
+    .inp-group { margin-bottom: 12px; }
+    .inp-group input, .inp-group select {
+      width: 100%; padding: 11px 13px; border: 1px solid #CBD5E1;
+      border-radius: 6px; font-size: 0.92rem; font-family: inherit;
+    }
+    .inp-group input:focus { outline: none; border-color: var(--gold); }
 
-• 500+ Happy Families Settled
-• 12+ Years Trusted Real Estate Legacy
-• 100% Clear Title & RERA Approved
-• 4.9 ★ Customer Satisfaction Rating
-• Client Testimonial: "Investing with Hiranya Real Estates gave us complete peace of mind. Transparent documentation, prime location, and on-time handover!" — Ramesh & Kavitha, Home Buyers
+    /* 2. SOCIAL PROOF */
+    .social-proof {
+      background: var(--navy); color: var(--white); padding: 45px 7%;
+      border-bottom: 3px solid var(--gold);
+    }
+    .stats {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 24px; text-align: center; max-width: 1100px; margin: 0 auto;
+    }
+    .stats h3 { color: var(--gold); font-size: 2.2rem; }
+    .stats p { color: #CBD5E1; font-size: 0.9rem; }
 
-4. Every Slide Lo Lead Magnet (Projects Slider)
+    /* Sections */
+    section.pad { padding: 75px 7%; max-width: 1250px; margin: 0 auto; }
+    .sec-head { text-align: center; margin-bottom: 45px; }
+    .sec-head span { color: var(--gold-dark); font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; }
+    .sec-head h2 { font-size: 2.3rem; color: var(--navy); margin-top: 6px; }
 
-• Slide 1: Hiranya Royal 2 BHK — ₹85 Lakhs* Onwards | East-Facing, 1,250 Sq.Ft | Button: Download 2 BHK Floor Plan PDF
-• Slide 2: Hiranya Grand 3 BHK — ₹1.15 Cr* Onwards | Corner Unit, 1,680 Sq.Ft, No Common Walls | Button: Unlock Price & EMI Sheet
-• Slide 3: Hiranya Sky Villas — ₹1.45 Cr* Onwards | Private Terrace Deck, 2,150 Sq.Ft | Button: Watch 3D Virtual Video Tour
-• Slide 4: Hiranya Golden Plots — ₹65 Lakhs* Onwards | 100% Vaastu, Gated Community | Button: Get Master Layout & Plot Availability
+    /* 3. RESIDENCES SLIDER (EVERY SLIDE WITH LEAD MAGNET) */
+    .slides-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;
+    }
+    .slide-card {
+      background: var(--white); border-radius: 12px; overflow: hidden;
+      box-shadow: 0 10px 25px rgba(11,25,44,0.07); border-bottom: 4px solid var(--gold);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .slide-card img { width: 100%; height: 195px; object-fit: cover; }
+    .slide-body { padding: 22px; }
+    .price-tag { color: var(--gold-dark); font-weight: 700; font-size: 1.15rem; margin-bottom: 4px; }
+    .slide-body h3 { color: var(--navy); font-size: 1.3rem; margin-bottom: 8px; }
+    .slide-body p { color: var(--muted); font-size: 0.9rem; margin-bottom: 16px; }
 
-5. Key Highlights & Benefits
+    /* 4. KEY HIGHLIGHTS & BENEFITS */
+    .highlights-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 22px;
+    }
+    .h-card {
+      background: var(--white); padding: 26px; border-radius: 10px;
+      border-left: 4px solid var(--gold); box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    .h-card h3 { color: var(--navy); font-size: 1.25rem; margin-bottom: 8px; }
+    .h-card p { color: var(--muted); font-size: 0.92rem; }
 
-• 100% Vaastu Compliant: East & North facing residences with abundant natural sunlight and cross-ventilation.
-• 25,000 Sq.Ft Resort Clubhouse: Swimming pool, indoor badminton, gym, jogging tracks, and 24/7 3-tier smart security.
-• 70% Open Green Space: Landscaped gardens, senior citizen parks, and safe vehicle-free kids play zones.
-• Easy 80% Bank Loan: Zero hidden charges with instant loan assistance from all leading banks.
+    /* 5. LOCATION & WALKTHROUGH VIDEO */
+    .loc-video-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px; align-items: center; background: var(--white); padding: 35px; border-radius: 12px;
+    }
+    .loc-row {
+      display: flex; justify-content: space-between; padding: 12px 15px;
+      background: var(--ivory); margin-bottom: 10px; border-radius: 6px; font-weight: 600;
+    }
+    .loc-row span { color: var(--gold-dark); }
+    .loc-video-grid video { width: 100%; border-radius: 10px; }
 
-6. Prime Location
+    /* 6. FINAL CTA */
+    .final-cta {
+      background: var(--navy); color: var(--white); text-align: center; padding: 70px 7%;
+    }
+    .final-cta h2 { color: var(--gold); font-size: 2.4rem; margin-bottom: 12px; }
+    .final-cta p { color: #CBD5E1; max-width: 600px; margin: 0 auto 26px; }
 
-• 5 Mins — IT Parks & Business Hubs
-• 7 Mins — Top International Schools
-• 8 Mins — Multi-Specialty Hospitals
-• 10 Mins — Metro Station & Highway
+    /* POP-UP MODAL */
+    .modal-bg {
+      display: none; position: fixed; inset: 0; background: rgba(11,25,44,0.82);
+      z-index: 999; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-bg.open { display: flex; }
+    .modal-card {
+      background: var(--white); max-width: 410px; width: 100%; padding: 30px;
+      border-radius: 12px; position: relative; border-top: 5px solid var(--gold);
+    }
+    .close-x {
+      position: absolute; top: 12px; right: 16px; font-size: 1.5rem;
+      background: none; border: none; cursor: pointer;
+    }
 
-7. Final CTA & Pop-Up Form Text
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.3rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
 
-• Final Headline: Limited Pre-Launch Units Available!
-• Final Sub-Text: Register today with Hiranya Real Estates to claim zero floor-rise charges + free modular kitchen upgrade.
-• Final CTA Button: Claim Free Site Visit & Brochure
-• Pop-Up Form Heading: Get Instant Brochure & Best Price Quote
-• Pop-Up Form Fields: Full Name | Phone Number | Email Address
-• Pop-Up Submit Button: Send Details Now
+  <nav>
+    <div class="logo">HIRANYA REAL ESTATES</div>
+    <div class="nav-links">
+      <a href="#residences">Projects</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#location">Location</a>
+    </div>
+    <button class="btn-gold" onclick="openPopup('Download Brochure & Price Sheet')">Download Brochure</button>
+  </nav>
+
+  <!-- 1. HERO + LOOP VIDEO + HOME PAGE DIRECT FORM -->
+  <header class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="https://pexels.com" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-grid">
+      <div>
+        <div class="badge">RERA Approved • Clear Title</div>
+        <h1>Where Golden Dreams Meet Forever Homes.</h1>
+        <p>Premium 2 & 3 BHK residences and gated community plots by Hiranya Real Estates — crafted for 2X appreciation and peaceful family living.</p>
+        <button class="btn-gold" onclick="openPopup('Watch 3D Virtual Video Tour')">Watch Virtual Video Tour</button>
+      </div>
+
+      <div class="hero-form-card">
+        <h3>Get Instant Brochure & Quote</h3>
+        <p>Fill in your details for immediate floor plans & call back.</p>
+        <form onsubmit="handleSuccess(event, 'homeMsg')">
+          <div class="inp-group"><input type="text" placeholder="Full Name *" required></div>
+          <div class="inp-group"><input type="tel" placeholder="Phone Number (+91) *" required></div>
+          <div class="inp-group"><input type="email" placeholder="Email Address *" required></div>
+          <div class="inp-group">
+            <select>
+              <option>Interested In: 2 BHK Residence</option>
+              <option>Interested In: 3 BHK Corner Home</option>
+              <option>Interested In: Gated Open Plot</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-gold" style="width:100%;">Unlock Exclusive Launch Offer</button>
+          <p id="homeMsg" style="display:none; color:#059669; font-weight:600; margin-top:10px;">✓ Thank you! Brochure sent & advisor will call shortly.</p>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. SOCIAL PROOF -->
+  <div class="social-proof">
+    <div class="stats">
+      <div><h3>500+</h3><p>Happy Families Settled</p></div>
+      <div><h3>12+ Yrs</h3><p>Trusted Real Estate Legacy</p></div>
+      <div><h3>100%</h3><p>RERA & Clear Title</p></div>
+      <div><h3>4.9 ★</h3><p>Customer Satisfaction</p></div>
+    </div>
+  </div>
+
+  <!-- 3. EVERY SLIDE WITH LEAD MAGNET -->
+  <section id="residences" class="pad">
+    <div class="sec-head">
+      <span>Featured Properties</span>
