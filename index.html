@@ -47,13 +47,35 @@
                     <h1 class="home__title">Real Buyers. <br> Qualified Leads. <br> Rapid Sales.</h1>
                     <p class="home__description">Turn every ₹1 spent into high-ticket brokerage closings with 100% phone-verified buyers from Hiranya Realestates.</p>
 
-                    <div style="background: #ffffff; padding: 14px 16px; border-radius: 12px; border: 1.5px solid #d4af37;">
-                        <h3 style="color: #0b132b; font-size: 15px; font-weight: 700;">Claim 5 Free Verified Buyer Leads in Your City</h3>
-                        <form action="https://wa.me" target="_blank" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;">
-                            <input type="text" name="text" placeholder="Your Name &amp; Micro-Market (e.g. Ravi - Bengaluru)" required style="flex: 1; min-width: 170px; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px;">
-                            <button type="submit" class="button" style="padding: 10px 16px; cursor: pointer;">Get 5 Free Leads →</button>
-                        </form>
-                    </div>
+                    <div style="background: #ffffff; padding: 18px; border-radius: 14px; border: 2px solid #d4af37; box-shadow: 0 12px 28px rgba(0,0,0,0.25); margin-bottom: 1.5rem;">
+    <h3 style="color: #0b132b; font-size: 16px; font-weight: 700; margin-bottom: 12px;">Claim 5 Free Verified Buyer Leads in Your City</h3>
+    <form onsubmit="sendHeroLead(event)" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px;">
+        <input type="text" id="leadName" placeholder="Full Name *" required style="padding: 10px 12px; border: 1.5px solid #d1d5db; border-radius: 8px; font-size: 13px; color: #0b132b; width: 100%;">
+        <input type="tel" id="leadPhone" placeholder="Phone / WhatsApp Number *" required style="padding: 10px 12px; border: 1.5px solid #d1d5db; border-radius: 8px; font-size: 13px; color: #0b132b; width: 100%;">
+        <input type="email" id="leadEmail" placeholder="Email Address *" required style="padding: 10px 12px; border: 1.5px solid #d1d5db; border-radius: 8px; font-size: 13px; color: #0b132b; width: 100%;">
+        <select id="leadBudget" required style="padding: 10px 12px; border: 1.5px solid #d1d5db; border-radius: 8px; font-size: 13px; color: #0b132b; background: #fff; width: 100%;">
+            <option value="" disabled selected>Select Target Budget *</option>
+            <option value="Under ₹50 Lakhs">Under ₹50 Lakhs</option>
+            <option value="₹50 Lakhs – ₹1 Cr">₹50 Lakhs – ₹1 Cr</option>
+            <option value="₹1 Cr – ₹2.5 Cr">₹1 Cr – ₹2.5 Cr</option>
+            <option value="₹2.5 Cr & Above">₹2.5 Cr &amp; Above</option>
+        </select>
+        <button type="submit" class="button" style="grid-column: 1 / -1; padding: 12px 18px; background: linear-gradient(135deg, #f5d061 0%, #d4af37 50%, #b8860b 100%) !important; color: #000000 !important; font-weight: 700 !important; border-radius: 8px; cursor: pointer; border: none; font-size: 14px;">
+            Get 5 Free Leads →
+        </button>
+    </form>
+</div>
+<script>
+function sendHeroLead(e) {
+    e.preventDefault();
+    var msg = "Hi Hiranya Realestates! I want 5 Free Verified Buyer Leads.%0A"
+            + "• Name: " + encodeURIComponent(document.getElementById('leadName').value) + "%0A"
+            + "• Phone: " + encodeURIComponent(document.getElementById('leadPhone').value) + "%0A"
+            + "• Email: " + encodeURIComponent(document.getElementById('leadEmail').value) + "%0A"
+            + "• Budget: " + encodeURIComponent(document.getElementById('leadBudget').value);
+    window.open("https://wa.me" + msg, "_blank");
+}
+</script>
 
                     <div class="home__value">
                         <div><h1 class="home__value-number">10K <span>+</span></h1><span class="home__value-description">Qualified Leads</span></div>
