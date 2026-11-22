@@ -14,7 +14,8 @@
         .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 2rem; text-align: left; }
         .highlight-card { background: var(--container-color); border: 1px solid rgba(59, 130, 246, 0.35); border-radius: 12px; padding: 1.25rem; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
         @keyframes pulseBlue { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.75); } 70% { transform: scale(1.04); box-shadow: 0 0 0 14px rgba(59, 130, 246, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); } }
-        .pulse-gold-btn { animation: pulseBlue 2s infinite; }
+        .pulse-btn { animation: pulseBlue 2s infinite; }
+        .blue-cta { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%) !important; color: #ffffff !important; border: 2px solid #93c5fd !important; font-weight: 700 !important; }
         .contact__card-box { background: linear-gradient(145deg, #062c22 0%, #0d4436 100%) !important; border: 2px solid #d4af37 !important; border-radius: 16px !important; box-shadow: 0 12px 28px rgba(6, 44, 34, 0.28) !important; }
         .contact__card-title { color: #f5d061 !important; }
         .contact__card-description { color: #e2e8f0 !important; }
@@ -34,7 +35,7 @@
                 </ul>
             </div>
             <i class='bx bx-moon change-theme' id="theme-button"></i>
-            <button onclick="openPopup()" class="button nav__button pulse-gold-btn" style="cursor: pointer;">Get Started</button>
+            <button onclick="openPopup()" class="button nav__button blue-cta pulse-btn" style="cursor: pointer;">Get Started</button>
         </nav>
     </header>
 
@@ -42,18 +43,15 @@
         <section class="home section" id="home">
             <div class="home__container container grid">
                 <div class="home__data">
-                    <span style="color: #93c5fd; font-size: 12px; font-weight: 700;">★ EXCLUSIVE PARTNER NETWORK FOR AGENTS &amp; CHANNEL PARTNERS</span>
+                    <span style="color: #d4af37; font-size: 12px; font-weight: 700;">★ EXCLUSIVE PARTNER NETWORK FOR AGENTS &amp; CHANNEL PARTNERS</span>
                     <h1 class="home__title">Real Buyers. <br> Qualified Leads. <br> Rapid Sales.</h1>
                     <p class="home__description">Turn every ₹1 spent into high-ticket brokerage closings with 100% phone-verified buyers from Hiranya Realestates.</p>
 
                     <div style="margin-bottom: 2rem;">
-                        <button onclick="openPopup()" class="button pulse-gold-btn" style="padding: 15px 30px; font-size: 16px; font-weight: 800; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+                        <button onclick="openPopup()" class="button blue-cta pulse-btn" style="padding: 15px 30px; font-size: 16px; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
                             🎁 Claim Free Leads →
                         </button>
                     </div>
-
-
-
 
                     <div class="home__value">
                         <div><h1 class="home__value-number">10K <span>+</span></h1><span class="home__value-description">Qualified Leads</span></div>
