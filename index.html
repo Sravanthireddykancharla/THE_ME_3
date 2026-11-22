@@ -23,7 +23,33 @@
                 </ul>
             </div>
             <i class='bx bx-moon change-theme' id="theme-button"></i>
-            <button onclick="openPopup()" class="button nav__button" style="cursor:pointer;">Get 5 Free Leads</button>
+            <form onsubmit="sendBottomLead(event)" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; max-width: 720px; margin: 0 auto; text-align: left;">
+    <input type="text" id="bottomName" placeholder="Full Name *" required style="padding: 12px 14px; border: 1.5px solid #d4af37; border-radius: 8px; font-size: 13px; color: #0b132b; background: #ffffff; width: 100%;">
+    <input type="tel" id="bottomPhone" placeholder="Phone / WhatsApp Number *" required style="padding: 12px 14px; border: 1.5px solid #d4af37; border-radius: 8px; font-size: 13px; color: #0b132b; background: #ffffff; width: 100%;">
+    <input type="email" id="bottomEmail" placeholder="Email Address *" required style="padding: 12px 14px; border: 1.5px solid #d4af37; border-radius: 8px; font-size: 13px; color: #0b132b; background: #ffffff; width: 100%;">
+    <select id="bottomBudget" required style="padding: 12px 14px; border: 1.5px solid #d4af37; border-radius: 8px; font-size: 13px; color: #0b132b; background: #ffffff; width: 100%;">
+        <option value="" disabled selected>Select Target Budget *</option>
+        <option value="Under ₹50 Lakhs">Under ₹50 Lakhs</option>
+        <option value="₹50 Lakhs – ₹1 Cr">₹50 Lakhs – ₹1 Cr</option>
+        <option value="₹1 Cr – ₹2.5 Cr">₹1 Cr – ₹2.5 Cr</option>
+        <option value="₹2.5 Cr & Above">₹2.5 Cr &amp; Above</option>
+    </select>
+    <button type="submit" class="button" style="grid-column: 1 / -1; padding: 14px 20px; background: linear-gradient(135deg, #f5d061 0%, #d4af37 50%, #b8860b 100%) !important; color: #000000 !important; font-weight: 700 !important; border-radius: 8px; cursor: pointer; border: none; font-size: 15px;">
+        Lock My Area &amp; Get 5 Free Leads →
+    </button>
+</form>
+<script>
+function sendBottomLead(e) {
+    e.preventDefault();
+    var msg = "Hi Hiranya Realestates! I want to lock my micro-market slot & claim 5 Free Leads.%0A"
+            + "• Name: " + encodeURIComponent(document.getElementById('bottomName').value) + "%0A"
+            + "• Phone: " + encodeURIComponent(document.getElementById('bottomPhone').value) + "%0A"
+            + "• Email: " + encodeURIComponent(document.getElementById('bottomEmail').value) + "%0A"
+            + "• Budget: " + encodeURIComponent(document.getElementById('bottomBudget').value);
+    window.open("https://wa.me" + msg, "_blank");
+}
+</script>
+
 
         </nav>
     </header>
